@@ -11,27 +11,30 @@ const Layout = ({ children }) => {
     <>
       <Global
         styles={css`
-        * {
-          box-sizing: border-box;
-          margin: 0;
-        }
+          * {
+            box-sizing: border-box;
+            margin: 0;
+          }
 
-        * + * {
-          margin-top: 1rem;
-        }
+          /* More info: https://bit.ly/2PsCnzk */
+          * + * {
+            margin-top: 1rem;
+          }
 
-        html,
-        body {
-          margin: 0;
-          color: #555;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-            Helveitca, Arial, sans-serif;
-          font-size: 18px;
-          line-height: 1.4;
+          html,
+          body {
+            margin: 0;
+            color: #555;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+              'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 18px;
+            line-height: 1.4;
 
-          /* remove margin for the main div that Gatsby mounts into */
-          > div {
-            margin-top: 0;
+            /* remove margin for the main div that Gatsby mounts into */
+            > div {
+              margin-top: 0;
+            }
           }
 
           h1,
@@ -40,23 +43,22 @@ const Layout = ({ children }) => {
           h4,
           h5,
           h6 {
-              color: #222;
-              line-height; 1.1;
+            color: #222;
+            line-height: 1.1;
 
-              + * {
-                  margin-top: 0.5rem;
-              }
+            + * {
+              margin-top: 0.5rem;
+            }
           }
 
           strong {
-              color: #222;
+            color: #222;
           }
 
           li {
-              margin-top: 0.25rem:
+            margin-top: 0.25rem;
           }
-        }
-      `}
+        `}
       />
       <Helmet>
         <html lang="en" />
@@ -66,9 +68,8 @@ const Layout = ({ children }) => {
       <Header />
       <main
         css={css`
-          margin: 2rem auto 4rem;
-          max-width: 90vw;
-          width: 550px;
+          margin: 2rem auto;
+          max-width: 550px;
         `}
       >
         {children}
